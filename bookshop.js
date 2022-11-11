@@ -1,3 +1,10 @@
 var wrapper = document.getElementById("wrapper");
 
-console.log("Wrapper : ", wrapper.style);
+var menu = document.createElement("div");
+menu.id = "menu";
+wrapper.appendChild(menu);
+
+var logo = document.createElement("img");
+logo.src = "../icons/logo.png";
+logo.id = "logo";
+menu.appendChild(logo);
