@@ -31,3 +31,27 @@ menu.appendChild(menu_item3);
 var store_content = document.createElement("div");
 store_content.id = "store_content";
 wrapper.appendChild(store_content);
+
+var grid_books = document.createElement("grid");
+grid_books.id = "grid_books";
+store_content.appendChild(grid_books);
+
+var book_desc = document.createElement("div");
+book_desc.className = "book1";
+book_desc.textContent = "Book1";
+grid_books.appendChild(book_desc);
+
+book_desc = document.createElement("div");
+book_desc.className = "book2";
+book_desc.textContent = "Book2";
+grid_books.appendChild(book_desc);
+
+book_desc = document.createElement("div");
+book_desc.className = "book3";
+book_desc.textContent = "Book3";
+grid_books.appendChild(book_desc);
+
+book_desc = document.createElement("div");
+book_desc.className = "book4";
+book_desc.textContent = "Book4";
+grid_books.appendChild(book_desc);

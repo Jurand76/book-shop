@@ -1,7 +1,7 @@
 body {
   background-color: #000000;
-  width: 100vh;
-  height: 100vh;
+  align-content: center;
+  margin: 0 auto;
 }
 
 #wrapper {
@@ -10,9 +10,6 @@ body {
   width: 1500px;
   height: 950px;
   background-color: #fffdfc;
-  align-items: center;
-  align-content: center;
-  margin: auto;
 }
 
 #menu_bar {
@@ -30,7 +27,7 @@ body {
 
 #menu {
   position: absolute;
-  top: 42px;
+  top: 38px;
   left: 250px;
   width: 500px;
   height: 60px;
@@ -41,6 +38,7 @@ body {
   color: #555555;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  font-size: 20px;
   padding-left: 30px;
   padding-right: 30px;
   cursor: pointer;
@@ -57,6 +55,62 @@ body {
 
 #store_content {
   position: absolute;
-  top: 200px;
-  padding: 30px, 30px, 30px, 30px;
+  top: 100px;
+  width: 1500px;
+  height: 750px;
+}
+
+#grid_books {
+  display: grid;
+  width: 1440px;
+  height: 690px;
+  margin: 30px auto;
+  grid-template-columns: repeat(2, 710px);
+  grid-template-rows: repeat(2, 335px);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.book1 {
+  grid-area: 1 / 1 / 2 / 2;
+  background: rgb(126, 85, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 1, 1) 0%,
+    rgba(164, 126, 19, 1) 100%
+  );
+  border-radius: 15px;
+}
+
+.book2 {
+  grid-area: 1 / 2 / 2 / 3;
+  background: rgb(126, 85, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 1, 1) 0%,
+    rgba(164, 126, 19, 1) 100%
+  );
+  border-radius: 15px;
+}
+
+.book3 {
+  grid-area: 2 / 1 / 3 / 2;
+  background: rgb(126, 85, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 1, 1) 0%,
+    rgba(164, 126, 19, 1) 100%
+  );
+  border-radius: 15px;
+}
+
+.book4 {
+  grid-area: 2 / 2 / 3 / 3;
+  background: rgb(126, 85, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 1, 1) 0%,
+    rgba(164, 126, 19, 1) 100%
+  );
+  border-radius: 15px;
 }
