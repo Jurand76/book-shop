@@ -8,7 +8,7 @@ menu_bar.id = "menu_bar";
 wrapper.appendChild(menu_bar);
 
 var logo = document.createElement("img");
-logo.src = "../icons/logo2.png";
+logo.src = "./icons/logo2.png";
 logo.id = "logo";
 menu_bar.appendChild(logo);
 
