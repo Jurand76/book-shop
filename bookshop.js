@@ -1,3 +1,6 @@
+var books = fetch("./books.json").then((response) => null);
+console.log(books);
+
 var wrapper = document.getElementById("wrapper");
 
 var menu_bar = document.createElement("div");
