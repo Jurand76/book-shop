@@ -15,7 +15,7 @@ body {
   margin: auto;
 }
 
-#menu {
+#menu_bar {
   position: absolute;
   top: 0px;
   width: 1500px;
@@ -23,7 +23,36 @@ body {
   background: #d6d6d6;
 }
 
+#menu {
+  position: absolute;
+  top: 42px;
+  left: 250px;
+  margin-left: 100px;
+  width: 500px;
+  height: 60px;
+  background: none;
+}
+
+.menu_item {
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.menu_item:hover {
+  color: yellow;
+}
+
 #logo {
   margin-top: 12px;
   margin-left: 30px;
+}
+
+#store_content {
+  position: absolute;
+  top: 200px;
+  padding: 30px, 30px, 30px, 30px;
 }
