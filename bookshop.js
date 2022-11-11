@@ -40,21 +40,21 @@ grid_books.id = "grid_books";
 store_content.appendChild(grid_books);
 
 var book_desc = document.createElement("div");
-book_desc.className = "book1";
+book_desc.className = "book1 book_entry";
 book_desc.textContent = "Book1";
 grid_books.appendChild(book_desc);
 
 book_desc = document.createElement("div");
-book_desc.className = "book2";
+book_desc.className = "book2 book_entry";
 book_desc.textContent = "Book2";
 grid_books.appendChild(book_desc);
 
 book_desc = document.createElement("div");
-book_desc.className = "book3";
+book_desc.className = "book3 book_entry";
 book_desc.textContent = "Book3";
 grid_books.appendChild(book_desc);
 
 book_desc = document.createElement("div");
-book_desc.className = "book4";
+book_desc.className = "book4 book_entry";
 book_desc.textContent = "Book4";
 grid_books.appendChild(book_desc);
