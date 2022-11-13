@@ -1,15 +1,17 @@
 body {
   background-color: #000000;
   align-content: center;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 #wrapper {
   position: absolute;
-  top: 100px;
+  top: 40px;
   width: 1500px;
   height: 950px;
   background-color: #fffdfc;
+  margin: auto auto;
 }
 
 #menu_bar {
@@ -108,4 +110,12 @@ body {
 
 .book4 {
   grid-area: 2 / 2 / 3 / 3;
+}
+
+.book_author {
+  color: #0000ff;
+}
+
+.book_title {
+  color: #222222;
 }
