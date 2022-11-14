@@ -118,4 +118,12 @@ body {
 
 .book_title {
   color: #222222;
+  overflow: hidden;
+  height: 40px;
+}
+
+.book_img_small {
+  width: 180px;
+  height: 210px;
+  padding: 13px;
 }

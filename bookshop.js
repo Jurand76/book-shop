@@ -54,12 +54,17 @@ async function DisplayStore() {
     book_desc.className = "book" + i + " book_entry";
     grid_books.appendChild(book_desc);
 
-    book_author = document.createElement("span");
+    book_author = document.createElement("div");
     book_author.textContent = books[bookStart + i - 1].author;
     book_author.className = "book_author";
     book_desc.appendChild(book_author);
 
-    book_title = document.createElement("span");
+    book_img_small = document.createElement("img");
+    book_img_small.src = books[bookStart + i - 1].imageLink;
+    book_img_small.className = "book_img_small";
+    book_desc.appendChild(book_img_small);
+
+    book_title = document.createElement("div");
     book_title.className = "book_title";
     book_title.textContent = books[bookStart + i - 1].title;
     book_desc.appendChild(book_title);
