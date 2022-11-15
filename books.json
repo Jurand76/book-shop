@@ -29,42 +29,42 @@
   },
   {
     "author": "Addy Osmani",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/andy_osmani_javascript_design_patterns.png",
     "title": "Learning JavaScript Design Patterns",
     "price": 32,
     "description": "With Learning JavaScript Design Patterns, you’ll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you."
   },
   {
     "author": "Boris Cherny",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/boris_cherny_programming_typescript.png",
     "title": "Programming TypeScript",
     "price": 28,
     "description": "Any programmer working with a dynamically typed language will tell you how hard it is to scale to more lines of code and more engineers. That’s why Facebook, Google, and Microsoft invented gradual static type layers for their dynamically typed JavaScript and Python code. This practical book shows you how one such type layer, TypeScript, is unique among them: it makes programming fun with its powerful static type system."
   },
   {
     "author": "Alex Banks, Eve Porcello",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/alex_banks_learning_react.png",
     "title": "Learning React, 2nd Edition",
     "price": 25,
     "description": "If you want to learn how to build efficient React applications, this is your book. Ideal for web developers and software engineers who understand how JavaScript, CSS, and HTML work in the browser, this updated edition provides best practices and patterns for writing modern React code. No prior knowledge of React or functional JavaScript is necessary."
   },
   {
     "author": "Bradley Meck Alex Young and Mike Cantelon",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/alex_young_node_js_in_action.png",
     "title": "Node.js in Action",
     "price": 38,
     "description": "Node.js in Action, Second Edition is a thoroughly revised book based on the best-selling first edition. It starts at square one and guides you through all the features, techniques, and concepts you'll need to build production-quality Node applications."
   },
   {
     "author": "Kyle Simpson",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/kyle_simpson_get_started_js.png",
     "title": "You Don't Know JS Yet: Get Started",
     "price": 26,
     "description": "It seems like there's never been as much widespread desire before for a better way to deeply learn the fundamentals of JavaScript. But with a million blogs, books, and videos out there, just where do you START? Look no further!"
   },
   {
     "author": "John Resig and Bear Bibeault",
-    "imageLink": "add image to your project,put link to it there",
+    "imageLink": "./books/john_resig_secrets_javascript_ninja.png",
     "title": "Secrets of the JavaScript Ninja",
     "price": 33,
     "description": "Secrets of the Javascript Ninja takes you on a journey towards mastering modern JavaScript development in three phases: design, construction, and maintenance. Written for JavaScript developers with intermediate-level skills, this book will give you the knowledge you need to create a cross-browser JavaScript library from the ground up."
