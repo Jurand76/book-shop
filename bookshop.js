@@ -9,6 +9,39 @@ async function getBooks2() {
   for (let i = 0; i < bookbase.length; i++) books.push(bookbase[i]);
 }
 
+// creating Book Catalog - 4 books
+async function bookCatalog(sourceDiv, firstBook) {
+  for (let i = firstBook; i < firstBook + 4; i++) {
+    book_desc = document.createElement("div");
+    book_desc.className = "book" + (i - firstBook + 1) + " book_entry";
+    sourceDiv.appendChild(book_desc);
+
+    book_author = document.createElement("div");
+    book_author.textContent = books[i].author;
+    book_author.className = "book_author";
+    book_desc.appendChild(book_author);
+
+    book_img_small = document.createElement("img");
+    book_img_small.src = books[i].imageLink;
+    book_img_small.className = "book_img_small";
+    book_desc.appendChild(book_img_small);
+
+    book_title = document.createElement("div");
+    book_title.className = "book_title";
+    book_title.textContent = books[i].title;
+    book_desc.appendChild(book_title);
+  }
+}
+
+// removing Book Catalog code from HTML
+async function destroyBookCatalog(sourceDiv, firstBook) {
+  for (let i = firstBook; i < firstBook + 4; i++) {
+    book_desc = sourceDiv.getElementsByTagName("div")[0];
+    sourceDiv.removeChild(book_desc);
+  }
+}
+
+// main page of Book Store
 async function DisplayStore() {
   console.log("Book catalog : ", books);
 
@@ -45,58 +78,40 @@ async function DisplayStore() {
   store_content.id = "store_content";
   wrapper.appendChild(store_content);
 
-  var grid_books = document.createElement("grid");
+  grid_books = document.createElement("grid");
   grid_books.id = "grid_books";
   store_content.appendChild(grid_books);
 
-  for (let i = 1; i < 5; i++) {
-    book_desc = document.createElement("div");
-    book_desc.className = "book" + i + " book_entry";
-    grid_books.appendChild(book_desc);
-
-    book_author = document.createElement("div");
-    book_author.textContent = books[bookStart + i - 1].author;
-    book_author.className = "book_author";
-    book_desc.appendChild(book_author);
-
-    book_img_small = document.createElement("img");
-    book_img_small.src = books[bookStart + i - 1].imageLink;
-    book_img_small.className = "book_img_small";
-    book_desc.appendChild(book_img_small);
-
-    book_title = document.createElement("div");
-    book_title.className = "book_title";
-    book_title.textContent = books[bookStart + i - 1].title;
-    book_desc.appendChild(book_title);
-  }
+  await bookCatalog(grid_books, bookStart);
 
   var button_previous = document.createElement("div");
   button_previous.id = "button_previous";
-  button_previous.onclick = function () {
+  button_previous.onclick = async function () {
     console.log("Previous button clicked");
+    await destroyBookCatalog(grid_books, bookStart);
     bookStart = bookStart - 4;
     if (bookStart < 0) bookStart = 0;
     console.log("Book start = ", bookStart);
-    DisplayStore();
+    await bookCatalog(grid_books, bookStart);
   };
-
   button_previous.textContent = "<";
   store_content.appendChild(button_previous);
 
   var button_next = document.createElement("div");
   button_next.id = "button_next";
-  button_next.onclick = function () {
+  button_next.onclick = async function () {
     console.log("Next button clicked");
+    await destroyBookCatalog(grid_books, bookStart);
     bookStart = bookStart + 4;
-    if ((bookStart) => books.length - 4) bookStart = books.length - 4;
+    if (bookStart > books.length - 4) bookStart = books.length - 4;
     console.log("Book start = ", bookStart);
-    book_title.textContent = books[bookStart].title;
-    //DisplayStore();
+    await bookCatalog(grid_books, bookStart);
   };
   button_next.textContent = ">";
   store_content.appendChild(button_next);
 }
 
+// Main Display function - can be displayed Store, Blog or About Us
 async function MainDisplay() {
   await getBooks2();
   if (displayscreen == 1) DisplayStore();
@@ -104,7 +119,9 @@ async function MainDisplay() {
   if (displayscreen == 3) DisplayAboutUs();
 }
 
+// global variables and start application
 const filename = "./books.json";
+var grid_books;
 var displayscreen = 1;
 var bookStart = 0;
 var books = Array();
