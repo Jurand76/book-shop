@@ -14,6 +14,21 @@ async function bookCatalog(sourceDiv, firstBook) {
   for (let i = firstBook; i < firstBook + 4; i++) {
     book_desc = document.createElement("div");
     book_desc.className = "book" + (i - firstBook + 1) + " book_entry";
+    book_desc.dataset.value = i;
+    book_desc.onclick = async function () {
+      var temporary = document.getElementById("book_details");
+      temporary.style = "visibility: visible";
+      let author = temporary.getElementsByClassName("book_details_author")[0];
+      author.textContent = books[i].author;
+      let bigImage = temporary.getElementsByClassName("book_img_big")[0];
+      bigImage.src = books[i].imageLink;
+      let title = temporary.getElementsByClassName("book_details_title")[0];
+      title.textContent = books[i].title;
+      let description = temporary.getElementsByClassName(
+        "book_details_description"
+      )[0];
+      description.textContent = books[i].description;
+    };
     sourceDiv.appendChild(book_desc);
 
     book_author = document.createElement("div");
@@ -109,6 +124,43 @@ async function DisplayStore() {
   };
   button_next.textContent = ">";
   store_content.appendChild(button_next);
+
+  // book details box
+  var book_details = document.createElement("div");
+  book_details.id = "book_details";
+  store_content.appendChild(book_details);
+
+  book_details_author = document.createElement("div");
+  book_details_author.textContent = "";
+  book_details_author.className = "book_details_author";
+  book_details.appendChild(book_details_author);
+
+  book_img_big = document.createElement("img");
+  book_img_big.src = "";
+  book_img_big.className = "book_img_big";
+  book_details.appendChild(book_img_big);
+
+  book_details_title = document.createElement("div");
+  book_details_title.className = "book_details_title";
+  book_details_title.textContent = "";
+  book_details.appendChild(book_details_title);
+
+  book_details_description = document.createElement("div");
+  book_details_description.className = "book_details_description";
+  book_details_description.textContent = "";
+  book_details.appendChild(book_details_description);
+
+  book_details_close = document.createElement("div");
+  book_details_close.id = "book_details_close";
+  book_details_close.textContent = "X";
+  book_details_close.onclick = function () {
+    book_details.style = "visibility: hidden";
+  };
+  book_details.appendChild(book_details_close);
+
+  book_details_price = document.createElement("div");
+  book_details_price.id = "book_details_price";
+  book_details.appendChild(book_details_price);
 }
 
 // Main Display function - can be displayed Store, Blog or About Us

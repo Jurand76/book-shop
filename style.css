@@ -39,7 +39,7 @@ body {
 .menu_item {
   color: #555555;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -89,6 +89,7 @@ body {
   border-style: solid;
   padding: 20px;
   font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   color: black;
 }
 
@@ -116,12 +117,14 @@ body {
   color: #0000ff;
   height: 20px;
   overflow: hidden;
+  font-weight: 500;
 }
 
 .book_title {
   color: #222222;
   overflow: hidden;
   height: 40px;
+  font-weight: 400;
 }
 
 .book_img_small {
@@ -170,4 +173,86 @@ body {
 #button_next:hover {
   border-color: red;
   color: red;
+}
+
+#book_details {
+  display: flex;
+  position: absolute;
+  width: 700px;
+  height: 600px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: orange;
+  border-width: 2px;
+  top: 70px;
+  right: 50px;
+  background: rgba(230, 230, 230, 0.85);
+  visibility: hidden;
+}
+
+.book_details_author {
+  position: absolute;
+  top: 30px;
+  left: 400px;
+  width: 280px;
+  height: 90px;
+  color: #753900;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  overflow: hidden;
+}
+
+.book_details_title {
+  position: absolute;
+  top: 130px;
+  left: 400px;
+  width: 280px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.book_details_description {
+  position: absolute;
+  top: 210px;
+  left: 400px;
+  width: 280px;
+  height: 240px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.book_img_big {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 360px;
+  height: 420px;
+}
+
+#book_details_close {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+#book_details_close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#book_details_price {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: blue;
+  bottom: 30px;
+  left: 50px;
 }
