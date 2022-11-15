@@ -69,6 +69,32 @@ async function DisplayStore() {
     book_title.textContent = books[bookStart + i - 1].title;
     book_desc.appendChild(book_title);
   }
+
+  var button_previous = document.createElement("div");
+  button_previous.id = "button_previous";
+  button_previous.onclick = function () {
+    console.log("Previous button clicked");
+    bookStart = bookStart - 4;
+    if (bookStart < 0) bookStart = 0;
+    console.log("Book start = ", bookStart);
+    DisplayStore();
+  };
+
+  button_previous.textContent = "<";
+  store_content.appendChild(button_previous);
+
+  var button_next = document.createElement("div");
+  button_next.id = "button_next";
+  button_next.onclick = function () {
+    console.log("Next button clicked");
+    bookStart = bookStart + 4;
+    if ((bookStart) => books.length - 4) bookStart = books.length - 4;
+    console.log("Book start = ", bookStart);
+    book_title.textContent = books[bookStart].title;
+    //DisplayStore();
+  };
+  button_next.textContent = ">";
+  store_content.appendChild(button_next);
 }
 
 async function MainDisplay() {
