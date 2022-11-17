@@ -28,6 +28,8 @@ async function bookCatalog(sourceDiv, firstBook) {
         "book_details_description"
       )[0];
       description.textContent = books[i].description;
+      let price = document.getElementById("book_details_price_value");
+      price.textContent = books[i].price;
     };
     sourceDiv.appendChild(book_desc);
 
@@ -161,6 +163,25 @@ async function DisplayStore() {
   book_details_price = document.createElement("div");
   book_details_price.id = "book_details_price";
   book_details.appendChild(book_details_price);
+
+  book_details_price_text = document.createElement("span");
+  book_details_price_text.className = "book_details_price";
+  book_details_price_text.textContent = "Price: ";
+  book_details_price.appendChild(book_details_price_text);
+
+  book_details_price_value = document.createElement("span");
+  book_details_price_value.id = "book_details_price_value";
+  book_details_price.appendChild(book_details_price_value);
+
+  book_details_price_text = document.createElement("span");
+  book_details_price_text.className = "book_details_price";
+  book_details_price_text.textContent = "$";
+  book_details_price.appendChild(book_details_price_text);
+
+  book_details_button = document.createElement("button");
+  book_details_button.id = "book_details_button";
+  book_details_button.textContent = "Add to basket";
+  book_details.appendChild(book_details_button);
 }
 
 // Main Display function - can be displayed Store, Blog or About Us
