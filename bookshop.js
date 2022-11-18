@@ -91,6 +91,16 @@ async function DisplayStore() {
   menu_item3.className = "menu_item";
   menu.appendChild(menu_item3);
 
+  var menu_basket_value = document.createElement("span");
+  menu_basket_value.id = "menu_basket_value";
+  menu.appendChild(menu_basket_value);
+
+  var menu_basket_img = document.createElement("img");
+  menu_basket_img.id = "menu_basket_img";
+  if (basket_quantity > 0) menu_basket_img.src = "./icons/basket_full.png";
+  else menu_basket_img.src = "./icons/basket_empty.png";
+  menu.appendChild(menu_basket_img);
+
   var store_content = document.createElement("div");
   store_content.id = "store_content";
   wrapper.appendChild(store_content);
@@ -194,6 +204,7 @@ async function MainDisplay() {
 
 // global variables and start application
 const filename = "./books.json";
+var basket_quantity = 0;
 var grid_books;
 var displayscreen = 1;
 var bookStart = 0;
