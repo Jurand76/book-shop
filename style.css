@@ -59,6 +59,21 @@ body {
   position: absolute;
   top: -18px;
   right: 0px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#menu_basket_value {
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  right: 20px;
+  z-index: 2;
+  top: 9px;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
 }
 
 #store_content {

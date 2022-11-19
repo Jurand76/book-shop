@@ -97,8 +97,10 @@ async function DisplayStore() {
 
   var menu_basket_img = document.createElement("img");
   menu_basket_img.id = "menu_basket_img";
-  if (basket_quantity > 0) menu_basket_img.src = "./icons/basket_full.png";
-  else menu_basket_img.src = "./icons/basket_empty.png";
+  if (basket_quantity > 0) {
+    menu_basket_img.src = "./icons/basket_full.png";
+    menu_basket_value.textContent = basket_quantity;
+  } else menu_basket_img.src = "./icons/basket_empty.png";
   menu.appendChild(menu_basket_img);
 
   var store_content = document.createElement("div");
@@ -190,6 +192,20 @@ async function DisplayStore() {
 
   book_details_button = document.createElement("button");
   book_details_button.id = "book_details_button";
+  book_details_button.onclick = function () {
+    basket_quantity++;
+    menu_basket_img.src = "./icons/basket_full.png";
+    menu_basket_value.textContent = basket_quantity;
+    basket_item = [];
+    basket_item;
+    basket_item.push(
+      book_details_author.textContent,
+      book_details_title.textContent,
+      book_details_price_value.textContent
+    );
+    basket_items.push(basket_item);
+    console.log(basket_items);
+  };
   book_details_button.textContent = "Add to basket";
   book_details.appendChild(book_details_button);
 }
@@ -204,6 +220,8 @@ async function MainDisplay() {
 
 // global variables and start application
 const filename = "./books.json";
+var basket_item = [];
+var basket_items = [];
 var basket_quantity = 0;
 var grid_books;
 var displayscreen = 1;
