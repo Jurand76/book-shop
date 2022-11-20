@@ -361,6 +361,104 @@ body {
   padding-left: 24px;
 }
 
+#order_page {
+  position: absolute;
+  width: 1400px;
+  height: 650px;
+  margin-left: 50px;
+  margin-top: 150px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(153, 153, 153);
+  background: rgba(210, 210, 210, 1);
+  background-image: url("./images/orderpage.jpg");
+  border-radius: 10px;
+  visibility: hidden;
+  z-index: 5;
+}
+
+#order_page_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: black;
+}
+
+#order_page_close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#order_main {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: black;
+}
+
+#order_list {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 1300px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(46, 46, 46);
+}
+
+.order_item {
+  font-family: "Montserrat", sans-serif;
+  height: 25px;
+}
+
+.order_item_author {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(9, 0, 139);
+  width: 300px;
+}
+
+.order_item_title {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(53, 53, 53);
+  padding-left: 30px;
+  width: 700px;
+}
+
+.order_item_price_2 {
+  position: absolute;
+  right: 0px;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+#order_total {
+  position: absolute;
+  top: 500px;
+  left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(46, 46, 46);
+}
+
+#order_total_value {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  padding-left: 20px;
+  color: rgb(11, 0, 167);
+}
+
 #footer {
   position: absolute;
   bottom: 0px;

@@ -112,6 +112,10 @@ async function DisplayStore() {
     menu_basket_img.src = "./icons/basket_full.png";
     menu_basket_value.textContent = basket_quantity;
   } else menu_basket_img.src = "./icons/basket_empty.png";
+  menu_basket_img.onclick = function () {
+    let site = document.getElementById("order_page");
+    site.style = "visibility: visible";
+  };
   menu.appendChild(menu_basket_img);
 
   // store content
@@ -212,6 +216,22 @@ async function DisplayStore() {
       book_details_price_value.textContent
     );
     basket_items.push(basket_item);
+    let site = document.getElementById("order_list");
+    let text = site.innerHTML;
+    site.innerHTML =
+      text +
+      "<div class='order_item'><span class='order_item_author'>" +
+      book_details_author.textContent +
+      "</span><span class='order_item_title'>" +
+      book_details_title.textContent +
+      "</span><span class='order_item_price_2'>" +
+      book_details_price.textContent +
+      "</span></div>";
+    basket_sum = basket_sum + parseInt(book_details_price_value.textContent);
+    let site2 = document.getElementById("order_total_value");
+    site2.textContent = basket_sum + "$";
+    site2 = document.getElementById("order_total");
+    site2.style = "top: " + parseInt(80 + basket_quantity * 25) + "px";
   };
   book_details_button.textContent = "Add to basket";
   book_details.appendChild(book_details_button);
@@ -256,6 +276,42 @@ async function DisplayStore() {
   };
   aboutUs.appendChild(aboutUsClose);
 
+  // order confirmation
+  var order_page = document.createElement("div");
+  order_page.id = "order_page";
+  wrapper.appendChild(order_page);
+
+  var order_main = document.createElement("div");
+  order_main.id = "order_main";
+  order_main.textContent = "List of ordered books";
+  order_page.appendChild(order_main);
+
+  var order_list = document.createElement("div");
+  order_list.id = "order_list";
+  order_page.appendChild(order_list);
+
+  var order_total = document.createElement("div");
+  order_total.id = "order_total";
+  order_total.textContent = "Total price:";
+  order_page.appendChild(order_total);
+
+  var order_total_value = document.createElement("span");
+  order_total_value.id = "order_total_value";
+  order_total_value.textContent = "";
+  order_total.appendChild(order_total_value);
+
+  //var basket_item = [];
+  //var basket_items = [];
+  //var basket_quantity = 0;
+
+  var order_page_close = document.createElement("div");
+  order_page_close.id = "order_page_close";
+  order_page_close.textContent = "X";
+  order_page_close.onclick = function () {
+    order_page.style = "visibility: hidden";
+  };
+  order_page.appendChild(order_page_close);
+
   // footer
   var footer = document.createElement("div");
   footer.id = "footer";
@@ -276,6 +332,7 @@ var background_number = 4;
 var basket_item = [];
 var basket_items = [];
 var basket_quantity = 0;
+var basket_sum = 0;
 var grid_books;
 var displayscreen = 1;
 var bookStart = 0;
