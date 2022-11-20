@@ -83,7 +83,7 @@ body {
   margin-top: 150px;
   border-width: 2px;
   border-style: solid;
-  border-color: white;
+  border-color: rgb(153, 153, 153);
   background: rgba(210, 210, 210, 1);
   background-image: url("./images/aboutus1.jpg");
   border-radius: 10px;
