@@ -421,14 +421,14 @@ body {
 .order_item_author {
   font-weight: 700;
   font-size: 20px;
-  color: rgb(9, 0, 139);
+  color: rgb(90, 90, 90);
   width: 300px;
 }
 
 .order_item_title {
   font-weight: 500;
   font-size: 20px;
-  color: rgb(53, 53, 53);
+  color: rgb(33, 33, 33);
   padding-left: 30px;
   width: 700px;
 }
@@ -456,7 +456,7 @@ body {
   font-weight: 700;
   font-size: 30px;
   padding-left: 20px;
-  color: rgb(11, 0, 167);
+  color: rgb(172, 0, 0);
 }
 
 #footer {
