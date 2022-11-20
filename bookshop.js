@@ -58,6 +58,14 @@ async function destroyBookCatalog(sourceDiv, firstBook) {
   }
 }
 
+//about us
+
+function openAboutUs() {
+  let aboutUsClosing = document.getElementById("about_us");
+  console.log("show aboutus");
+  aboutUsClosing.style = "visibility: visible";
+}
+
 // main page of Book Store
 async function DisplayStore() {
   console.log("Book catalog : ", books);
@@ -68,7 +76,7 @@ async function DisplayStore() {
   wrapper.appendChild(menu_bar);
 
   var logo = document.createElement("img");
-  logo.src = "./icons/logo2.png";
+  logo.src = "./icons/logo4.png";
   logo.id = "logo";
   menu_bar.appendChild(logo);
 
@@ -88,6 +96,9 @@ async function DisplayStore() {
 
   var menu_item3 = document.createElement("span");
   menu_item3.textContent = "ABOUT US";
+  menu_item3.onclick = function () {
+    openAboutUs();
+  };
   menu_item3.className = "menu_item";
   menu.appendChild(menu_item3);
 
@@ -103,6 +114,7 @@ async function DisplayStore() {
   } else menu_basket_img.src = "./icons/basket_empty.png";
   menu.appendChild(menu_basket_img);
 
+  // store content
   var store_content = document.createElement("div");
   store_content.id = "store_content";
   wrapper.appendChild(store_content);
@@ -113,30 +125,26 @@ async function DisplayStore() {
 
   await bookCatalog(grid_books, bookStart);
 
-  var button_previous = document.createElement("div");
+  var button_previous = document.createElement("img");
   button_previous.id = "button_previous";
+  button_previous.src = "./icons/previous.png";
   button_previous.onclick = async function () {
-    console.log("Previous button clicked");
     await destroyBookCatalog(grid_books, bookStart);
     bookStart = bookStart - 4;
     if (bookStart < 0) bookStart = 0;
-    console.log("Book start = ", bookStart);
     await bookCatalog(grid_books, bookStart);
   };
-  button_previous.textContent = "<";
   store_content.appendChild(button_previous);
 
-  var button_next = document.createElement("div");
+  var button_next = document.createElement("img");
   button_next.id = "button_next";
+  button_next.src = "./icons/next.png";
   button_next.onclick = async function () {
-    console.log("Next button clicked");
     await destroyBookCatalog(grid_books, bookStart);
     bookStart = bookStart + 4;
     if (bookStart > books.length - 4) bookStart = books.length - 4;
-    console.log("Book start = ", bookStart);
     await bookCatalog(grid_books, bookStart);
   };
-  button_next.textContent = ">";
   store_content.appendChild(button_next);
 
   // book details box
@@ -204,10 +212,54 @@ async function DisplayStore() {
       book_details_price_value.textContent
     );
     basket_items.push(basket_item);
-    console.log(basket_items);
   };
   book_details_button.textContent = "Add to basket";
   book_details.appendChild(book_details_button);
+
+  // next and previous background
+  var background_change = document.createElement("div");
+  background_change.id = "background_change";
+  wrapper.appendChild(background_change);
+
+  var background_previous = document.createElement("img");
+  background_previous.id = "background_previous_button";
+  background_previous.src = "./icons/previous.png";
+  background_previous.onclick = function () {
+    background_number = background_number - 1;
+    if (background_number < 1) background_number = 1;
+    let source = "url('./images/background_book" + background_number + ".jpg')";
+    store_content.style.backgroundImage = source;
+  };
+  background_change.appendChild(background_previous);
+
+  var background_next = document.createElement("img");
+  background_next.id = "background_next_button";
+  background_next.src = "./icons/next.png";
+  background_next.onclick = function () {
+    background_number = background_number + 1;
+    if (background_number > 9) background_number = 9;
+    let source = "url('./images/background_book" + background_number + ".jpg')";
+    store_content.style.backgroundImage = source;
+  };
+  background_change.appendChild(background_next);
+
+  // about Us
+  var aboutUs = document.createElement("div");
+  aboutUs.id = "about_us";
+  wrapper.appendChild(aboutUs);
+
+  var aboutUsClose = document.createElement("div");
+  aboutUsClose.id = "about_us_close";
+  aboutUsClose.textContent = "X";
+  aboutUsClose.onclick = function () {
+    aboutUs.style = "visibility: hidden";
+  };
+  aboutUs.appendChild(aboutUsClose);
+
+  // footer
+  var footer = document.createElement("div");
+  footer.id = "footer";
+  wrapper.appendChild(footer);
 }
 
 // Main Display function - can be displayed Store, Blog or About Us
@@ -220,6 +272,7 @@ async function MainDisplay() {
 
 // global variables and start application
 const filename = "./books.json";
+var background_number = 4;
 var basket_item = [];
 var basket_items = [];
 var basket_quantity = 0;
