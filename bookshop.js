@@ -58,6 +58,14 @@ async function destroyBookCatalog(sourceDiv, firstBook) {
   }
 }
 
+//about us
+
+function openAboutUs() {
+  let aboutUsClosing = document.getElementById("about_us");
+  console.log("show aboutus");
+  aboutUsClosing.style = "visibility: visible";
+}
+
 // main page of Book Store
 async function DisplayStore() {
   console.log("Book catalog : ", books);
@@ -88,6 +96,9 @@ async function DisplayStore() {
 
   var menu_item3 = document.createElement("span");
   menu_item3.textContent = "ABOUT US";
+  menu_item3.onclick = function () {
+    openAboutUs();
+  };
   menu_item3.className = "menu_item";
   menu.appendChild(menu_item3);
 
@@ -123,7 +134,6 @@ async function DisplayStore() {
     if (bookStart < 0) bookStart = 0;
     await bookCatalog(grid_books, bookStart);
   };
-  button_previous.textContent = "<";
   store_content.appendChild(button_previous);
 
   var button_next = document.createElement("img");
@@ -135,7 +145,6 @@ async function DisplayStore() {
     if (bookStart > books.length - 4) bookStart = books.length - 4;
     await bookCatalog(grid_books, bookStart);
   };
-  button_next.textContent = ">";
   store_content.appendChild(button_next);
 
   // book details box
@@ -233,6 +242,19 @@ async function DisplayStore() {
     store_content.style.backgroundImage = source;
   };
   background_change.appendChild(background_next);
+
+  // about Us
+  var aboutUs = document.createElement("div");
+  aboutUs.id = "about_us";
+  wrapper.appendChild(aboutUs);
+
+  var aboutUsClose = document.createElement("div");
+  aboutUsClose.id = "about_us_close";
+  aboutUsClose.textContent = "X";
+  aboutUsClose.onclick = function () {
+    aboutUs.style = "visibility: hidden";
+  };
+  aboutUs.appendChild(aboutUsClose);
 
   // footer
   var footer = document.createElement("div");

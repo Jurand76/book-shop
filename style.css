@@ -75,6 +75,37 @@ body {
   color: white;
 }
 
+#about_us {
+  position: absolute;
+  width: 1400px;
+  height: 650px;
+  margin-left: 50px;
+  margin-top: 150px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  background: rgba(210, 210, 210, 1);
+  background-image: url("./images/aboutus1.jpg");
+  border-radius: 10px;
+  visibility: hidden;
+  z-index: 4;
+}
+
+#about_us_close {
+  position: absolute;
+  top: 28px;
+  right: 37px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: black;
+}
+
+#about_us_close:hover {
+  color: red;
+  cursor: pointer;
+}
+
 #store_content {
   position: absolute;
   top: 100px;
