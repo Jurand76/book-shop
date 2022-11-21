@@ -247,7 +247,9 @@ async function DisplayStore() {
     elem5.id = "remove_button" + basket_quantity;
     elem5.className = "remove_button_text remove_button";
     elem5.textContent = "X";
-    elem5.onclick = removeItemFunction(basket_quantity);
+    elem5.onclick = function () {
+      removeItemFunction(basket_quantity);
+    };
     elem.appendChild(elem5);
 
     basket_sum = basket_sum + parseInt(book_details_price_value.textContent);
