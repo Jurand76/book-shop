@@ -249,6 +249,18 @@ async function DisplayStore() {
     elem5.textContent = "X";
     elem5.onclick = function () {
       removeItemFunction(basket_quantity);
+      basket_quantity--;
+      let val = document.getElementById("menu_basket_value");
+      val.textContent = basket_quantity;
+      let val2 = document.getElementById("order_total_value");
+      console.log(basket_items);
+      val2.textContent =
+        parseInt(
+          parseInt(val2.textContent) -
+            parseInt(basket_items[basket_quantity][2])
+        ) + "$";
+      basket_sum = basket_sum - parseInt(basket_items[basket_quantity][2]);
+      basket_items.splice(basket_quantity, 1);
     };
     elem.appendChild(elem5);
 
