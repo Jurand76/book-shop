@@ -58,6 +58,12 @@ async function destroyBookCatalog(sourceDiv, firstBook) {
   }
 }
 
+// removing items from order list
+async function removeItemFunction(itemNumber) {
+  let whatToRemove = document.getElementById("order_item" + itemNumber);
+  whatToRemove.remove();
+}
+
 //about us
 
 function openAboutUs() {
@@ -217,21 +223,32 @@ async function DisplayStore() {
     );
     basket_items.push(basket_item);
     let site = document.getElementById("order_list");
-    let text = site.innerHTML;
+    let elem = document.createElement("div");
+    elem.id = "order_item" + basket_quantity;
+    elem.className = "order_item";
+    site.appendChild(elem);
 
-    site.innerHTML =
-      text +
-      "<div id='order_item" +
-      basket_quantity +
-      "' class='order_item'><span class='order_item_author'>" +
-      book_details_author.textContent +
-      "</span><span class='order_item_title'>" +
-      book_details_title.textContent +
-      "</span><span class='order_item_price_2'>" +
-      book_details_price.textContent +
-      "</span><span id='remove_button" +
-      basket_quantity +
-      "' class='remove_button_text remove_button'>X</span></div>";
+    let elem2 = document.createElement("span");
+    elem2.className = "order_item_author";
+    elem2.textContent = book_details_author.textContent;
+    elem.appendChild(elem2);
+
+    let elem3 = document.createElement("span");
+    elem3.className = "order_item_title";
+    elem3.textContent = book_details_title.textContent;
+    elem.appendChild(elem3);
+
+    let elem4 = document.createElement("span");
+    elem4.className = "order_item_price_2";
+    elem4.textContent = book_details_price.textContent;
+    elem.appendChild(elem4);
+
+    let elem5 = document.createElement("span");
+    elem5.id = "remove_button" + basket_quantity;
+    elem5.className = "remove_button_text remove_button";
+    elem5.textContent = "X";
+    elem5.onclick = removeItemFunction(basket_quantity);
+    elem.appendChild(elem5);
 
     basket_sum = basket_sum + parseInt(book_details_price_value.textContent);
     let site2 = document.getElementById("order_total_value");
