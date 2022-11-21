@@ -218,15 +218,21 @@ async function DisplayStore() {
     basket_items.push(basket_item);
     let site = document.getElementById("order_list");
     let text = site.innerHTML;
+
     site.innerHTML =
       text +
-      "<div class='order_item'><span class='order_item_author'>" +
+      "<div id='order_item" +
+      basket_quantity +
+      "' class='order_item'><span class='order_item_author'>" +
       book_details_author.textContent +
       "</span><span class='order_item_title'>" +
       book_details_title.textContent +
       "</span><span class='order_item_price_2'>" +
       book_details_price.textContent +
-      "</span></div>";
+      "</span><span id='remove_button" +
+      basket_quantity +
+      "' class='remove_button_text remove_button'>X</span></div>";
+
     basket_sum = basket_sum + parseInt(book_details_price_value.textContent);
     let site2 = document.getElementById("order_total_value");
     site2.textContent = basket_sum + "$";
@@ -283,7 +289,7 @@ async function DisplayStore() {
 
   var order_main = document.createElement("div");
   order_main.id = "order_main";
-  order_main.textContent = "List of ordered books";
+  order_main.textContent = "List of selected books";
   order_page.appendChild(order_main);
 
   var order_list = document.createElement("div");
@@ -328,6 +334,8 @@ async function MainDisplay() {
 
 // global variables and start application
 const filename = "./books.json";
+var removeItem = [];
+var removeButton = [];
 var background_number = 4;
 var basket_item = [];
 var basket_items = [];
