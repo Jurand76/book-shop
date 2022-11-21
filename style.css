@@ -319,7 +319,6 @@ body {
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
-  transition-duration: 0.2s;
   background-color: rgb(189, 189, 189);
   border-radius: 6px;
   box-shadow: #505050 2px 2px 10px;
@@ -328,6 +327,7 @@ body {
 #book_details_button:hover {
   background-color: lightgreen;
   box-shadow: #3f8d00 2px 2px 10px;
+  transition-duration: 0.4s;
 }
 
 #background_change {
@@ -479,6 +479,26 @@ body {
   font-size: 30px;
   padding-left: 20px;
   color: rgb(172, 0, 0);
+}
+
+#order_page_button {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  bottom: 40px;
+  left: 550px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(49, 49, 49);
+}
+
+#order_page_button:hover {
+  color: black;
+  background: lightgreen;
+  transition: 0.4s;
 }
 
 #footer {

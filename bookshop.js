@@ -343,10 +343,6 @@ async function DisplayStore() {
   order_total_value.textContent = "";
   order_total.appendChild(order_total_value);
 
-  //var basket_item = [];
-  //var basket_items = [];
-  //var basket_quantity = 0;
-
   var order_page_close = document.createElement("div");
   order_page_close.id = "order_page_close";
   order_page_close.textContent = "X";
@@ -354,6 +350,11 @@ async function DisplayStore() {
     order_page.style = "visibility: hidden";
   };
   order_page.appendChild(order_page_close);
+
+  var order_page_button = document.createElement("button");
+  order_page_button.id = "order_page_button";
+  order_page_button.textContent = "Order books";
+  order_page.appendChild(order_page_button);
 
   // footer
   var footer = document.createElement("div");
