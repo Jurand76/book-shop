@@ -136,13 +136,14 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: black;
-  transition-duration: 0.6s;
+  cursor: pointer;
 }
 
 .book_entry:hover {
   border-color: rgb(16, 255, 76);
   box-shadow: 0px 0px 24px 0px rgba(58, 255, 116, 1);
   background: rgba(210, 210, 210, 0.85);
+  transition-duration: 0.6s;
 }
 
 .book1 {
